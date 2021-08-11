@@ -1,0 +1,20 @@
+<%- include('header') %>
+
+<section class="jumbotron container mt-5">
+<% if (!user) { %>
+	<h1>Welcome!</h1> 
+	
+	<p class="mt-5"><a href="/login/google" class="loginBtn loginBtn--google">Login with Google</a></p>
+	<p class="mt-5"><a href="/login/twitter" class="loginBtn loginBtn--twitter">Login with Twitter</a></p>
+	<p class="mt-5"><a href="/login/facebook" class="loginBtn loginBtn--facebook">Login with Facebook</a></p>
+
+<% } else { %>
+	<img class="rounded-circle" src="<%= user.photos[0].value %>"/>
+	<h1>Hello, 
+		<%= user.displayName %>
+	</h1>
+	<p class="mt-5"><a href="/logout" class="btn btn-primary">Logout</a></p>
+<% } %>
+</section>
+
+<%- include('footer') %>

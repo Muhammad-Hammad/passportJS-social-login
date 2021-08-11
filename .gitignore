@@ -1,0 +1,6 @@
+*-lock.json
+node_modules
+.env
+cert
+*.pem
+*.ext
